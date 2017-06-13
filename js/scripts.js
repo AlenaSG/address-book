@@ -27,10 +27,18 @@ function resetFields() {
   $("input.new-state").val("");
 }
 
+//var addressNumbersArray = [2, 3, 4, 5];
+  //addressNumbersArray.forEach(function(address) {
+    //var numberInput = $(address++).val();
+    //$(".blank").text(numberInput);
+  //});
+  //return addressNumbersArray()
+
 // user interface logic
 $(document).ready(function() {
   $("#add-address").click(function() {
-    $("#new-addresses").append('<div class="new-address">' +
+    $("#new-addresses").append('<h3>Address<span class="blank"></span></h3>' +
+                              '<div class="additional-address">' +
                                  '<div class="form-group">' +
                                    '<label for="new-street">Street</label>' +
                                    '<input type="text" class="form-control new-street">' +
@@ -45,6 +53,7 @@ $(document).ready(function() {
                                  '</div>' +
                                '</div>');
   });
+
   $("form#new-contact").submit(function(event) {
     event.preventDefault();
 
@@ -60,6 +69,9 @@ $(document).ready(function() {
 
       var newAddress = new Address(inputtedStreet, inputtedCity, inputtedState);
       newContact.addresses.push(newAddress);
+
+    $(".additional-address").remove();
+
     });
 
 
