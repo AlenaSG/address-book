@@ -38,7 +38,7 @@ function resetFields() {
 $(document).ready(function() {
   $("#add-address").click(function() {
     $("#new-addresses").append('<h3>Address<span class="blank"></span></h3>' +
-                              '<div class="additional-address">' +
+                              '<div class="new-address">' +
                                  '<div class="form-group">' +
                                    '<label for="new-street">Street</label>' +
                                    '<input type="text" class="form-control new-street">' +
@@ -70,7 +70,7 @@ $(document).ready(function() {
       var newAddress = new Address(inputtedStreet, inputtedCity, inputtedState);
       newContact.addresses.push(newAddress);
 
-    $(".additional-address").remove();
+    $(".newAddress").remove();
 
     });
 
